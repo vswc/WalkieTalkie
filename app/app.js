@@ -1,4 +1,4 @@
-const socket = io('ws://10.32.240.19:3000');
+const socket = io('ws://<IP_HERE>:3000');
 
 function htmlspecialchars(str) {
     return str
