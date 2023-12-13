@@ -6,7 +6,7 @@ const io = require('socket.io')(http, {
 });
 
 io.on('connection', (socket) => {
-    console.log('a user connected');
+    console.log('\nUSER CONNECTED\n');
 
     socket.on('message', (message) =>     {
         console.log(message);
