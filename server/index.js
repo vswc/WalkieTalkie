@@ -10,8 +10,9 @@ io.on('connection', (socket) => {
 
     socket.on('message', (message) =>     {
         console.log(message);
-        io.emit('message', `${socket.id.substr(0,2)} said ${message}` );   
+        io.emit('message', `${message}` );   
     });
 });
 
-http.listen(8080, () => console.log('listening on 127.0.0.1:8080') );
+http.listen(3000, () => console.log('listening on http://localhost/ws/app/index.html') );
+

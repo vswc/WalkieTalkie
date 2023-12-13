@@ -3,19 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>WalkieTalkie</title>
+    <link rel="stylesheet" href="/ws/dist/output.css">
+
     <script src="https://cdn.socket.io/4.7.2/socket.io.min.js" integrity="sha384-mZLF4UVrpi/QTWPA7BjNPEnkIfRFn4ZEO3Qt/HFklTJBj/gBOV8G3HcKn4NfQblz" crossorigin="anonymous"></script>
     <script defer src="app.js"></script>
 </head>
-<body>
+<body class="flex h-screen">
     
-    <ul>
+    <div class="chat-container">
+        <ul>
+            <li>test</li>
+            <li>adadaadadadad</li>
+        </ul>
+    </div>
 
-
-    </ul>
-
-    <input placeholder="message">
-    <button>Send</button>
+    <div class="fixed flex justify-center w-full bottom-0 mb-20">
+        <input placeholder="message" class="msg-input">
+        <button class="msg-send">
+            <img src="./assets/send.svg" alt="send" class="w-6 h-6">
+        </button>
+    </div>
 
 </body>
 </html>

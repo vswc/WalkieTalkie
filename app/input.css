@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply bg-slate-100;
+}
+
+.msg-input {
+    @apply bg-white w-1/4 border-2 border-slate-200 p-4 rounded-lg mx-4;
+}
+
+.msg-send {
+    @apply bg-blue-500 border-2 border-blue-300 p-4 rounded-lg;
+}
+
+.chat-container {
+    @apply mt-20 bg-white w-2/3 h-2/3 max-h-[2/3] shadow-md p-4 rounded-lg mx-auto;
+}
+
+.chat-container p {
+    @apply text-zinc-500 pl-4 italic;
+}
+
+.chat-container li {
+    @apply bg-slate-100 py-2 px-4 rounded-lg my-2 text-zinc-500 mx-4 w-min;
+}
