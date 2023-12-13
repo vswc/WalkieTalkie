@@ -21,4 +21,3 @@ io.on('connection', (socket) => {
 });
 
 http.listen(3000, '10.32.240.19', () => console.log('listening on http://localhost/ws/app/index.html') );
-

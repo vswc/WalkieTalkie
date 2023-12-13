@@ -21,8 +21,13 @@ socket.on('message', text => {
         });
     }, 1000);
 
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const timeString = `${hours}:${minutes}`;
+
     const p = document.createElement('p');
-    p.innerHTML = "Guest";
+    p.innerHTML = `${timeString}`;
 
     const el = document.createElement('li');
     el.innerHTML = htmlspecialchars(text);
@@ -38,7 +43,7 @@ socket.on('message', text => {
 document.querySelector('button').onclick = () => {
 
     const text = document.querySelector('input').value;
-    if (text == null || text == "") {
+    if (text.trim() === "") {
         return;
     }
     socket.emit('message', text)
@@ -49,7 +54,7 @@ document.querySelector('button').onclick = () => {
 document.querySelector('input').onkeydown = (e) => {
     if (e.key === 'Enter') {
         const text = document.querySelector('input').value;
-        if (text == null || text == "") {
+        if (text.trim() === "") {
             return;
         }
         socket.emit('message', text)
