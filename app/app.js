@@ -1,5 +1,14 @@
 const socket = io('ws://10.32.240.19:3000');
 
+function htmlspecialchars(str) {
+    return str
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
 socket.on('message', text => {
 
     setInterval(() => {
@@ -16,13 +25,12 @@ socket.on('message', text => {
     p.innerHTML = "Guest";
 
     const el = document.createElement('li');
-    el.innerHTML = text;
+    el.innerHTML = htmlspecialchars(text);
 
     const chatWindow = document.querySelector('.chat-container ul');
     chatWindow.appendChild(p);
     chatWindow.appendChild(el);
 
-    // Scroll the chat-container after the new message is appended
     const chatContainer = document.querySelector('.chat-container');
     chatContainer.scrollTop = chatContainer.scrollHeight;
 });
