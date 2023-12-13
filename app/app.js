@@ -1,6 +1,17 @@
 const socket = io('ws://10.32.240.19:3000');
 
 socket.on('message', text => {
+
+    setInterval(() => {
+        const start = Date.now();
+    
+        socket.emit("customPing", {}, () => {
+            const duration = Date.now() - start;
+            const h = document.querySelector('h1');
+            h.innerHTML = `Websocket latency: ${duration} ms`;
+        });
+    }, 1000);
+
     const p = document.createElement('p');
     p.innerHTML = "Guest";
 

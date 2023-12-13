@@ -25,3 +25,7 @@ body {
 .chat-container li {
     @apply bg-slate-100 py-2 px-4 rounded-lg my-2 text-zinc-500 mx-4 w-fit flex;
 }
+
+h1 {
+    @apply font-semibold text-sm text-zinc-500 mb-10 font-mono;
+}
